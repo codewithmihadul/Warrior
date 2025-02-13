@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Shop UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #001F3F, #033860);
+            font-family: 'Luckiest Guy', cursive;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .shop-container {
+            background: #0b3d48;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            border: 5px solid #fff;
+            overflow: hidden;
+        }
+
+        .shop-header {
+            background: #b22222;
+            color: white;
+            font-size: 24px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 40px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .shop-items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .item img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .item p {
+            font-size: 20px;
+            color: #222;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #ff4040;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="shop-container">
+        <div class="shop-header">
+            <h1>SHOP</h1>
+        </div>
+        <div class="shop-items">
+            <div class="item">
+                <img src="1.webp" alt="Gift Box">
+                <p>$15</p>
+                <button>BUY</button>
+            </div>
+            <div class="item">
+                <img src="2.webp" alt="Heart">
+                <p>$7</p>
+                <button>BUY</button>
+            </div>
+            <div class="item">
+                <img src="present.png" alt="Present">
+                <p>$5</p>
+                <button>BUY</button>
+            </div>
+            <div class="item">
+                <img src="gem.png" alt="Gem">
+                <p>$25</p>
+                <button>BUY</button>
+            </div>
+            <div class="item">
+                <img src="crystal.png" alt="Crystal">
+                <p>$20</p>
+                <button>BUY</button>
+            </div>
+            <div class="item">
+                <img src="cupcake.png" alt="Cupcake">
+                <p>$10</p>
+                <button>BUY</button>
+            </div>
+            <div class="item">
+                <img src="donut.png" alt="Donut">
+                <p>$10</p>
+                <button>BUY</button>
+            </div>
+            <div class="item">
+                <img src="gold-bar.png" alt="Gold Bar">
+                <p>$15</p>
+                <button>BUY</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

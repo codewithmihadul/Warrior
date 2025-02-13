@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Diet & Workout Plan</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            background-color: #0f0f0f;
+            color: #0ff;
+            font-family: 'Papyrus', cursive;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+        }
+        select {
+            font-size: 16px;
+            padding: 10px;
+            background: black;
+            color: lime;
+            border: 2px solid lime;
+            width: 100%;
+            max-width: 300px;
+        }
+        .plans {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .plan-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(0, 255, 0, 0.1);
+            padding: 15px;
+            border: 2px solid lime;
+            margin: 10px;
+            box-shadow: 0 0 15px yellow;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 0, 0.3) 10%, transparent 50%);
+            transform: rotate(25deg);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            position: relative;
+            z-index: 1;
+        }
+        th, td {
+            border: 1px solid lime;
+            padding: 10px;
+        }
+        .martial-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 0, 0, 0.1);
+            padding: 15px;
+            border: 2px solid rgb(97, 253, 6);
+            margin: 10px;
+            box-shadow: 0 0 15px rgb(94, 255, 1);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .martial-container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.3) 10%, transparent 50%);
+            transform: rotate(25deg);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(rgb(72, 72, 253), rgb(40, 240, 0));
+            border-radius: 10px;
+        }
+        @media (max-width: 600px) {
+            .plan-container, .martial-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>﷽ﷺ </h1>
+        <h1>Be  A  WARRIOR ⚔</h1>
+        <select id="daySelector" onchange="updatePlan()">
+            <option value="Day 1">Day 1</option>
+            <option value="Day 2">Day 2</option>
+            <option value="Day 3">Day 3</option>
+            <option value="Day 4">Day 4</option>
+            <option value="Day 5">Day 5</option>
+            <option value="Day 6">Day 6</option>
+            <option value="Day 7">Day 7</option>
+        </select>
+
+        <div class="plans">
+            <div class="plan-container">
+                <h2>🍗 Diet Plan</h2>
+                <table id="dietTable"></table>
+            </div>
+            <div class="plan-container">
+                <h2>🏋️ Workout Plan</h2>
+                <table id="workoutTable"></table>
+            </div>
+            <div class="martial-container">
+                <h2>🥋 Martial Arts Training</h2>
+                <table id="martialTable"></table>
+            </div>
+        </div>
+    </div>
+
+    <!-- HTML !-->
+    <button href="https://youtube.com/playlist?list=PLUESlxDsJtMhmU36zJ7oW4zyrFyZOSssy&si=HPeL6hEHyxioe0v6" class="button-23" role="button">Warrior Fighting Training</button>
+    <button href="https://youtube.com/playlist?list=PLxA0Q8LycHlPyWvqAbdVoHVqxFm2WsVBY&si=-EWOmrs6Bhad_Cgt" class="button-23" role="button">Jeet Kune Do</button>
+
+    <style>
+        /* CSS */
+        .button-23 {
+          background-color: #2c6b10;
+          border: 1px solid #222222;
+          border-radius: 8px;
+          box-sizing: border-box;
+          color: #48ff00;
+          cursor: pointer;
+          display: inline-block;
+          font-family: 'Papyrus', cursive;
+          /* font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif; */
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20px;
+          margin: 0;
+          outline: none;
+          padding: 13px 23px;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          touch-action: manipulation;
+          transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+          user-select: none;
+          -webkit-user-select: none;
+          width: auto;
+        }
+
+        .button-23:focus-visible {
+          box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+          transition: box-shadow .2s;
+        }
+
+        .button-23:active {
+          background-color: #ffee00;
+          border-color: #000000;
+          transform: scale(.96);
+        }
+
+        .button-23:disabled {
+          border-color: #DDDDDD;
+          color: #DDDDDD;
+          cursor: not-allowed;
+          opacity: 1;
+        }
+    </style>
+
+
+
+    <script>
+        function updatePlan() {
+    const selectedDay = document.getElementById("daySelector").value;
+    
+    // Define the diet plans for each day
+    const dietPlans = {
+        "Day 1": ["Breakfast: 2 Boiled eggs and Roti + Vegetable / Milk", "Lunch: Rise with Fish fry / Chicken fry or roast and Dal", "Dinner: Grilled Fish with Rise and vegetable + Milk"],
+        "Day 2": ["Breakfast: 2 Boiled eggs and Roti + Vegetable / Milk", "Lunch: Rise with Fish fry / Chicken fry or roast and Dal", "Dinner: Grilled Fish with Rise and vegetable + Milk"],
+        "Day 3": ["Breakfast: 2 Boiled eggs and Roti + Vegetable / Milk", "Lunch: Rise with Fish fry / Chicken fry or roast and Dal", "Dinner: Grilled Fish with Rise and vegetable + Milk"],
+        "Day 4": ["Breakfast: 2 Boiled eggs and Roti + Vegetable / Milk", "Lunch: Rise with Fish fry / Chicken fry or roast and Dal", "Dinner: Grilled Fish with Rise and vegetable + Milk"],
+        "Day 5": ["Breakfast: 2 Boiled eggs and Roti + Vegetable / Milk", "Lunch: Rise with Fish fry / Chicken fry or roast and Dal", "Dinner: Grilled Fish with Rise and vegetable + Milk"],
+        "Day 6": ["Breakfast: 2 Boiled eggs and Roti + Vegetable / Milk", "Lunch: Rise with Fish fry / Chicken fry or roast and Dal", "Dinner: Grilled Fish with Rise and vegetable + Milk"],
+        "Day 7": ["Breakfast: 2 Boiled eggs and Roti + Vegetable / Milk", "Lunch: Rise with Fish fry / Chicken fry or roast and Dal", "Dinner: Grilled Fish with Rise and vegetable + Milk"],
+        
+    };
+    
+    // Define the workout plans for each day
+    const workoutPlans = {
+        "Day 1": [["Push-ups", "3", "15", "30s"], ["Squats", "3", "20", "30s"], ["Plank", "3", "40s", "30s"], ["Jumping Jacks", "3", "30s", "30s"], ["Bicycle Crunches", "3", "15", "30s"]],
+        "Day 2": [["Crunches", "3", "15", "30s"], ["Leg Raises", "3", "15", "30s"], ["Russian Twists", "3", "20", "30s"], ["Bicycle Crunches", "3", "15", "30s"]],
+        "Day 3": [["Lunges", "3", "15", "30s"], ["Squat Jumps", "3", "15", "30s"], ["Calf Raises", "3", "20", "30s"], ["Wall Sit", "3", "40s", "30s"], ["Bicycle Crunches", "3", "15", "30s"]],
+        "Day 4": [["Push-ups", "3", "15", "30s"], ["Triceps Dips (Using a Chair)", "3", "15", "30s"], ["Plank", "3", "40", "30s"], ["Shoulder Taps", "3", "20", "30s"], ["Bicycle Crunches", "3", "15", "30s"]],
+        "Day 5": [["Burpees", "3", "12", "30s"], ["High Knees", "3", "30s", "30s"], ["Mountain Climbers", "3", "20", "30s"], ["Jump Rope (or Skipping)", "3", "1 min", "30s"], ["Bicycle Crunches", "3", "15", "30s"]],
+        "Day 6": [["Hanging Leg Raises (use a sturdy bar)", "3", "15", "30s"], ["Plank to Push-up", "3", "15", "30s"], ["Side Plank", "3", "30s", "30s"], ["Flutter Kicks", "3", "30s", "30s"], ["Bicycle Crunches", "3", "15", "30s"]],
+        "Day 7": [["Stretching", "-", "10 min", "-"], ["Running", "4", "5 min", "1 min"], ["Bicycle Crunches", "3", "15", "30s"]],
+        
+    };
+
+    // Define the martial arts drills for each day
+    const martialArtsPlans = {
+        "Day 1": [["Front kick", "3", "10", "30s"], ["Back kick", "3", "10", "30s"], ["Side kick", "3", "10", "30s"], ["BOXING", "10", "10", "40s"]],
+        "Day 2": [["Axe kick", "3", "10", "30s"], ["Crescent kick", "3", "10", "30s"], ["Side kick (yeop chagi)", "3", "10", "30s"], ["BOXING", "10", "10", "40s"]],
+        "Day 3": [["Front kick (ap chagi)", "3", "10", "30s"], ["Push kick", "3", "10", "1min"], ["Roundhouse kick", "3", "10", "1min"], ["BOXING", "10", "10", "40s"]],
+        "Day 4": [["Scissor kick", "3", "10", "30s"], ["Axe kick (naeryo chagi)", "3", "10", "1min"], ["Flying back kick", "3", "10", "40s"], ["BOXING", "10", "10", "40s"]],
+        "Day 5": [["Hook kick", "3", "10", "30s"], ["Hook kick (huryeo chagi)", "3", "10", "30s"], ["Jumping front kick", "3", "10", "40s"], ["Downward Roundhouse Kick", "3", "10", "40s"], ["BOXING", "10", "10", "40s"]],
+        "Day 6": [["Roundhouse kick (dollyo chagi)", "3", "10", "30s"], ["Back kick (dwi chagi)", "3", "10", "1min"], ["Jumping Side Kick", "3", "10", "40s"], ["Flying side kick (twimyo yop chagi)", "3", "10", "40s"], ["BOXING", "10", "10", "40s"]],
+        "Day 7": [["Double roundhouse kick", "3", "10", "1min"], ["Knee strike", "3", "10", "1min"], ["Spinning hook kick", "3", "10", "40s"], ["Skip Roundhouse kick", "3", "10", "40s"], ["BOXING", "10", "10", "40s"]]
+    };
+    
+    // Update the diet table
+    const dietTable = document.getElementById("dietTable");
+    dietTable.innerHTML = "<tr><th>Meal</th></tr>";
+    dietPlans[selectedDay].forEach(meal => {
+        const row = dietTable.insertRow();
+        const cell = row.insertCell();
+        cell.innerHTML = meal;
+    });
+
+    // Update the workout table
+    const workoutTable = document.getElementById("workoutTable");
+    workoutTable.innerHTML = "<tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr>";
+    workoutPlans[selectedDay].forEach(exercise => {
+        const row = workoutTable.insertRow();
+        exercise.forEach(item => {
+            const cell = row.insertCell();
+            cell.innerHTML = item;
+        });
+    });
+
+    // Update the martial arts table
+    const martialTable = document.getElementById("martialTable");
+    martialTable.innerHTML = "<tr><th>Drill</th><th>Sets</th><th>Reps</th><th>Rest</th></tr>";
+    martialArtsPlans[selectedDay].forEach(drill => {
+        const row = martialTable.insertRow();
+        drill.forEach(item => {
+            const cell = row.insertCell();
+            cell.innerHTML = item;
+        });
+    });
+}
+
+updatePlan();
+
+    </script>
+</body>
+</html>
+
+
